@@ -1,4 +1,4 @@
-import numpy as np
+import autograd.numpy as np
 from autograd import grad
 from constants import *
 from auxiliary import gradient_phi_dir, hessian, function
@@ -89,18 +89,22 @@ def troncatoMAIN(eps, delta, x0) :
         #print("x", x)
         
         
-        """
+        
         ### DA CAMBIARE OGNI VOLTA ###
-        if (x - 1000 > 0).any() :
-            break
-        if (x + 1000 < 0).any() :
-            break
-        """
+        # if (x - 20 > 0).any() :
+        #     break
+        # if (x + 20 < 0).any() :
+        #     break
+        
 
-        if (x - 10 > 0).any() :
+        if (x > 10).any() :
+            print("troncato out of range")
             break
-        if (x + 10 < 0).any() :
+        if (x < -10).any() :
+            print("troncato out of range")
             break
+
+        
         
         f = phi_alpha
         l.append(f)
@@ -111,7 +115,6 @@ def troncatoMAIN(eps, delta, x0) :
         #print("------------------- fatta iterazione", n_iter, "-------------------")
         #print("\n")
     
-    print("Iterazioni del Troncato: ", n_iter)
-    print("Norma del gradiente: ", norm_gradient)
+    print(f"Trocanto Iterazioni del Troncato: {n_iter} Norma del gradiente: {norm_gradient}")
 
     return x

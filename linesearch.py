@@ -5,7 +5,7 @@ Created on Wed Nov 30 10:35:41 2022
 @author: leona
 """
 
-import numpy as np
+import autograd.numpy as np
 
 def linesearch_ArmijoNonMonotona(l, f, function, x, n, gamma, alpha, direction, gradient_dir, nf, eps) :
     
