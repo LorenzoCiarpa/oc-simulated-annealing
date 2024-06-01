@@ -165,7 +165,7 @@ from constants import *
 #     #print("funzione", f)
 #     return f
 
-#   4
+#   4 OK
 ### Miele and Cantrell ###
 
 # def dim() :
@@ -178,27 +178,27 @@ from constants import *
 #     return pto_init
     
 # def functionProblem(x, n) :
-#     f = np.exp(x[0] - x[1])**4 + 100*(x[1] - x[2])**6 + np.tan(x[2] - x[3])**4 + x[0]**8
+#     f = (np.exp(x[0]) - x[1])**4 + 100*((x[1] - x[2])**6) + (np.tan(x[2] - x[3]))**4 + x[0]**8
 #     return f
 
 
 #   5 OK
 ### WOOD FUNCTION ###
 
-def dim() :
-    return 4
+# def dim() :
+#     return 4
     
-def starting_point(n) :
-    pto_init = np.zeros(n)
-    for i in range(0, n, 2) :
-        pto_init[i] = float(np.random.uniform(-10, 10))
-    #print(pto_init)
-    return pto_init
+# def starting_point(n) :
+#     pto_init = np.zeros(n)
+#     for i in range(0, n, 2) :
+#         pto_init[i] = float(np.random.uniform(-10, 10))
+#     #print(pto_init)
+#     return pto_init
     
-def functionProblem(x, n) :
-    f = (100*(x[0]**2 - x[1])**2) + ((x[0] - 1)**2) + ((x[2] - 1)**2) + (90*(x[2]**2 - x[3])**2) + (10.1*((x[1] - 1)**2 + (x[3] - 1)**2)) + (19.8*(x[1] - 1)*(x[3] - 1))
-    #print("funzione", f)
-    return f
+# def functionProblem(x, n) :
+#     f = (100*(x[0]**2 - x[1])**2) + ((x[0] - 1)**2) + ((x[2] - 1)**2) + (90*(x[2]**2 - x[3])**2) + (10.1*((x[1] - 1)**2 + (x[3] - 1)**2)) + (19.8*(x[1] - 1)*(x[3] - 1))
+#     #print("funzione", f)
+#     return f
 
 
 #   6 OK
@@ -222,8 +222,8 @@ def functionProblem(x, n) :
 #     #print("funzione", f)
 #     return f
 
-#   7 # x(2) == 0 e != 1 (check)
-# ### 10*N MINIMI LOCALI ###
+#   7 OK
+# ### 10*N MINIMI LOCALI LEONARDO###
 # def dim() :
 #     return 2
     
@@ -243,35 +243,60 @@ def functionProblem(x, n) :
     
 #     for i in range(n - 1) :
 #         SOMMA += ((x[i] - 1)**2)*(1 + 10*np.sin(np.pi*x[i + 1])**2)
-#     f = (np.pi/n)*(10*np.sin(np.pi*x[0])**2 + SOMMA + (x[n - 1])**2)
+#     f = (np.pi/n)*(10*np.sin(np.pi*x[0])**2 + SOMMA + (x[n - 1] - 1)**2)
 #     #print("funzione", f)
 #     return f
 
-
-
-#   8 # x(2) == 0 e != 1 (check)
-### 15*N MINIMI LOCALI ###
+#   7 # OK
+# ### 10*N MINIMI LOCALI NOSTRA###
 # def dim() :
-#     return 4
+#     return 2
     
 # def starting_point(n) :
 #     pto_init = np.zeros(n)
 #     for i in range(0, n) :
 #         pto_init[i] = float(np.random.uniform(-10., 10.))
 #     return pto_init
-    
+
 # def functionProblem(x, n) :
 #     f = 0.
-#     somma = 0
-#     for i in range(DIM - 1):
-#         somma += (x[i] - 1)**2 * (1 + 10 * (np.sin(3*np.pi*x[i+1])**2))
+#     SOMMA = 0.
+#     term1 = 10 * (np.sin(np.pi * x[0])**2)
     
-#     arg1 = np.sin(3*np.pi*x[0])**2
-#     elem1 = arg1 * somma * (1/10)
+    
+#     for i in range(n - 1): #
+#         arg1 = (x[i] - 1)**2
+#         arg2 = 1 + (10 * (np.sin(np.pi * x[i+1])**2) )
+#         SOMMA += arg1*arg2
 
-#     elem2 = (1/10)*((x[DIM-1] - 1)**2) * (1 + (np.sin(2*np.pi*x[DIM-1])**2))
+#     term3 = (x[n - 1] - 1)**2 #x(n)
+#     f = (np.pi/(n))*(term1+SOMMA+term3)
+#     return f
+    
 
-#     return elem1 + elem2
+#   8 # x(2) == 0 e != 1 (check)
+### 15*N MINIMI LOCALI ###
+# def dim() :
+#     return 2
+    
+def starting_point(n) :
+    pto_init = np.zeros(n)
+    for i in range(0, n) :
+        pto_init[i] = float(np.random.uniform(-10., 10.))
+    return pto_init
+    
+def functionProblem(x, n) :
+    f = 0.
+    somma = 0
+    for i in range(DIM - 1):
+        somma += ((x[i] - 1)**2) * (1 + 10 * (np.sin(3*np.pi*x[i+1])**2))
+    
+    arg1 = np.sin(3*np.pi*x[0])**2
+    elem1 = (arg1 + somma) * (1/10)
+
+    elem2 = (1/10)*((x[DIM-1] - 1)**2) * (1 + (np.sin(2*np.pi*x[DIM-1])**2))
+
+    return elem1 + elem2
 
 # 9
 
@@ -359,22 +384,22 @@ def functionProblem(x, n) :
 
 
 ### 13 cosine mixture###
-# def dim() :
-#     return 4
+def dim() :
+    return 2
     
-# def starting_point(n) :
-#     pto_init = np.zeros(n)
-#     for i in range(0, n) :
-#         pto_init[i] = float(np.random.uniform(-1., 1.))
-#     return pto_init
+def starting_point(n) :
+    pto_init = np.zeros(n)
+    for i in range(0, n) :
+        pto_init[i] = float(np.random.uniform(-1., 1.))
+    return pto_init
     
-# def functionProblem(x, n) :
-#     #æc = 10**3
-#     f = 0.
-#     somma_1 = 0
-#     somma_2 = 0
-#     for i in range(0, n) :
-#         somma_1 += np.cos(5*np.pi*x[i])
-#         somma_2 += x[i]**2
-#     f = 0.1*somma_1 - somma_2
-#     return f
+def functionProblem(x, n) :
+    #æc = 10**3
+    f = 0.
+    somma_1 = 0
+    somma_2 = 0
+    for i in range(0, DIM) :
+        somma_1 += np.cos(5*np.pi*x[i])
+        somma_2 += x[i]**2
+    f = 0.1*somma_1 - somma_2
+    return f

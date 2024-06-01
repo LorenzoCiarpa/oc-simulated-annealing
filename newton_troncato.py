@@ -2,7 +2,7 @@ import autograd.numpy as np
 from autograd import grad
 from constants import *
 from auxiliary import gradient_phi_dir, hessian, function
-from linesearch import linesearch_ArmijoNonMonotona
+from linesearch import linesearch_ArmijoNonMonotona, linesearch
 
 def direction(f, nf, n, x, n_iter, eps) :
     eps_1 = 10**(-8)
@@ -83,8 +83,12 @@ def troncatoMAIN(eps, delta, x0) :
         gradient_dir = np.dot(grad(function)(x, n, eps).T, direct)
         #print("gradient_dir", gradient_dir)
     
-        alpha, phi_alpha, nf = linesearch_ArmijoNonMonotona(l, f, function, x, n, gamma, alpha, direct, gradient_dir, nf, eps)
+        # alpha, phi_alpha, nf = linesearch_ArmijoNonMonotona(l, f, function, x, n, gamma, alpha, direct, gradient_dir, nf, eps)
+        alpha, phi_alpha, nf = linesearch(f, function, x, n, gamma, alpha, direct, gradient_dir, nf, eps)
         #print("alpha", alpha, "phi_alpha", phi_alpha)
+        # print()
+        # print(f"x: {x}, alpha: {alpha}, d: {direct}")
+        # print()
         x = x + alpha*direct
         #print("x", x)
         
@@ -97,10 +101,10 @@ def troncatoMAIN(eps, delta, x0) :
         #     break
         
 
-        if (x > 10).any() :
+        if (x > 1).any() :
             print("troncato out of range")
             break
-        if (x < -10).any() :
+        if (x < -1).any() :
             print("troncato out of range")
             break
 

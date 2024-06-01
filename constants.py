@@ -15,6 +15,6 @@ max_iter_penalita = 10**2
 m = 9
 p = 1
 
-DIM = 4
+DIM = 2
 
 FILENAME_PROBLEM = "Funzione Test Prob1"

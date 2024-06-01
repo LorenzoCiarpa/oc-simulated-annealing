@@ -74,11 +74,11 @@ while k < max_iter:
 
     y_k = troncatoMAIN(eps, delta, x_k)
     
-    if (y_k > 10).any() :
-        print("Out of range")
+    if (y_k > 1).any() :
+        print(f"Out of range, y_k: {y_k}")
         break
-    if (y_k < -10).any() :
-        print("Out of range")
+    if (y_k < -1).any() :
+        print(f"Out of range, y_k: {y_k}")
         break
     
 # PASSO 4 #
@@ -132,6 +132,7 @@ while k < max_iter:
         print(f_Star)
     
     
+# print("\nAlgoritmo terminato per massimo numero di iterazioni, pari a", k)
 print("\nAlgoritmo terminato per massimo numero di iterazioni, pari a", max_iter)
 file.write("\nAlgoritmo terminato per massimo numero di iterazioni, pari a " + str(max_iter))
 file.write("\n\n")
