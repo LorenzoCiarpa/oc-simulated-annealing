@@ -52,7 +52,7 @@ def linesearch_ArmijoNonMonotona(l, f, function, x, n, gamma, alpha, direction, 
 
 def linesearch(f, function, x, n, gamma, alpha, direction, gradient_dir, nf, eps) :
     
-    alfa=1
+    alfa=0.001
 	
     y=np.zeros(n)
     
