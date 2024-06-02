@@ -18,3 +18,5 @@ p = 1
 DIM = 2
 
 FILENAME_PROBLEM = "Funzione Test Prob1"
+FILENAME_STAMPE = "results_simulated_annealing.txt"
+file_stampe = open(FILENAME_STAMPE, "w")

@@ -385,23 +385,23 @@ def functionProblem(x, n) :
 
 #Only if you start near the optimal point
 ### 13 cosine mixture###
-def dim() :
-    return 2
+# def dim() :
+#     return 2
     
-def starting_point(n) :
-    # return np.array([0.9, 0.9])
-    pto_init = np.zeros(n)
-    for i in range(0, n) :
-        pto_init[i] = float(np.random.uniform(-1., 1.))
-    return pto_init
+# def starting_point(n) :
+#     # return np.array([0.9, 0.9])
+#     pto_init = np.zeros(n)
+#     for i in range(0, n) :
+#         pto_init[i] = float(np.random.uniform(-1., 1.))
+#     return pto_init
     
-def functionProblem(x, n) :
-    #æc = 10**3
-    f = 0.
-    somma_1 = 0
-    somma_2 = 0
-    for i in range(0, DIM) :
-        somma_1 += np.cos(5*np.pi*x[i])
-        somma_2 += x[i]**2
-    f = 0.1*somma_1 - somma_2
-    return f
+# def functionProblem(x, n) :
+#     #æc = 10**3
+#     f = 0.
+#     somma_1 = 0
+#     somma_2 = 0
+#     for i in range(0, DIM) :
+#         somma_1 += np.cos(5*np.pi*x[i])
+#         somma_2 += x[i]**2
+#     f = 0.1*somma_1 - somma_2
+#     return f

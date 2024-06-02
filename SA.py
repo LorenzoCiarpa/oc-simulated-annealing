@@ -30,7 +30,7 @@ T = 1 / (k)
 
 
 # max_iter = 10**6 * 4
-max_iter = 10**5 * 2
+max_iter = 10**4 * 2
 dic = {}
 file = open("Funzione Test PROB 4", "w")
 
@@ -72,12 +72,14 @@ while k < max_iter:
     print("Numero di punti generati: ", k)
     print("Valore funzione obiettivo prima di minimizzazione locale: ", fObj)
 
+    file_stampe.write(f"Valore funzione obiettivo prima della minimizzazione locale all'iterazione {k}: {fObj} \n")
+
     y_k = troncatoMAIN(eps, delta, x_k)
     
-    if (y_k > 1).any() :
+    if (y_k > 10).any() :
         print(f"Out of range, y_k: {y_k}")
         break
-    if (y_k < -1).any() :
+    if (y_k < -10).any() :
         print(f"Out of range, y_k: {y_k}")
         break
     
@@ -87,6 +89,8 @@ while k < max_iter:
 
     fObj = function(y_k, n, eps)
     print("Valore funzione obiettivo dopo minimizzazione locale: ", fObj)
+    file_stampe.write(f"Valore funzione obiettivo dopo la minimizzazione locale all'iterazione {k}: {fObj} \n")
+
 
     n_func_eval += 1
     if fObj < f_Star :
@@ -101,7 +105,8 @@ while k < max_iter:
     # else :
         # xs = x_k
         # fs = function(x_k, n, eps)
-        
+    file_stampe.write(f"f* all'iterazione {k}: {f_Star}\n\n")
+    
     
     
     # if fs < fStar :
@@ -134,14 +139,22 @@ while k < max_iter:
     
 # print("\nAlgoritmo terminato per massimo numero di iterazioni, pari a", k)
 print("\nAlgoritmo terminato per massimo numero di iterazioni, pari a", max_iter)
+
+file_stampe.write(f"\n\n")
+file_stampe.write(f"Algoritmo terminato in {k} iterazioni \n")
+
 file.write("\nAlgoritmo terminato per massimo numero di iterazioni, pari a " + str(max_iter))
 file.write("\n\n")
+
+file_stampe.write(f"Il valore di x*: \n")
+
 for i in range(0, n) :
+    file_stampe.write(f"x({i+1}) = {x_Star[i]} \n")
     print("\nx(",i+1,") =",x_Star[i], "\n")
     file.write("\nx("+str(i+1)+") = "+str(x_Star[i])+ "\n")
 file.close()
-#for i in range(0, n) :
-    #print  ("\nx(",i+1,") =",x_k_1[i], "\n")
+
 print("Il valore ottimo è ", f_Star, " !")
+file_stampe.write(f"Il valore della funzione obiettivo in x*: {f_Star} \n")
 
 #print(dic_minimi)
