@@ -168,19 +168,18 @@ from constants import *
 #   4 OK
 ### Miele and Cantrell ###
 
-# def dim() :
-#     return 4
+def dim() :
+    return 4
     
-# def starting_point(n) :
-#     pto_init = np.zeros(n)
-#     for i in range(0, n) :
-#         pto_init[i] = float(np.random.uniform(-10, 10))
-#     return pto_init
+def starting_point(n) :
+    pto_init = np.zeros(n)
+    for i in range(0, n) :
+        pto_init[i] = float(np.random.uniform(-10, 10))
+    return pto_init
     
-# def functionProblem(x, n) :
-#     f = (np.exp(x[0]) - x[1])**4 + 100*((x[1] - x[2])**6) + (np.tan(x[2] - x[3]))**4 + x[0]**8
-#     return f
-
+def functionProblem(x, n) :
+    f = (np.exp(x[0]) - x[1])**4 + 100*((x[1] - x[2])**6) + (np.tan(x[2] - x[3]))**4 + x[0]**8
+    return f
 
 #   5 OK
 ### WOOD FUNCTION ###
@@ -190,7 +189,7 @@ from constants import *
     
 # def starting_point(n) :
 #     pto_init = np.zeros(n)
-#     for i in range(0, n, 2) :
+#     for i in range(0, n) :
 #         pto_init[i] = float(np.random.uniform(-10, 10))
 #     #print(pto_init)
 #     return pto_init
@@ -279,24 +278,24 @@ from constants import *
 # def dim() :
 #     return 2
     
-def starting_point(n) :
-    pto_init = np.zeros(n)
-    for i in range(0, n) :
-        pto_init[i] = float(np.random.uniform(-10., 10.))
-    return pto_init
+# def starting_point(n) :
+#     pto_init = np.zeros(n)
+#     for i in range(0, n) :
+#         pto_init[i] = float(np.random.uniform(-10., 10.))
+#     return pto_init
     
-def functionProblem(x, n) :
-    f = 0.
-    somma = 0
-    for i in range(DIM - 1):
-        somma += ((x[i] - 1)**2) * (1 + 10 * (np.sin(3*np.pi*x[i+1])**2))
+# def functionProblem(x, n) :
+#     f = 0.
+#     somma = 0
+#     for i in range(DIM - 1):
+#         somma += ((x[i] - 1)**2) * (1 + 10 * (np.sin(3*np.pi*x[i+1])**2))
     
-    arg1 = np.sin(3*np.pi*x[0])**2
-    elem1 = (arg1 + somma) * (1/10)
+#     arg1 = np.sin(3*np.pi*x[0])**2
+#     elem1 = (arg1 + somma) * (1/10)
 
-    elem2 = (1/10)*((x[DIM-1] - 1)**2) * (1 + (np.sin(2*np.pi*x[DIM-1])**2))
+#     elem2 = (1/10)*((x[DIM-1] - 1)**2) * (1 + (np.sin(2*np.pi*x[DIM-1])**2))
 
-    return elem1 + elem2
+#     return elem1 + elem2
 
 # 9
 
@@ -405,3 +404,40 @@ def functionProblem(x, n) :
 #         somma_2 += x[i]**2
 #     f = 0.1*somma_1 - somma_2
 #     return f
+
+if __name__ == "__main__":
+    from scipy.optimize import minimize, dual_annealing, basinhopping, differential_evolution
+
+    def functionProblemScipy(x) :
+        f = (np.exp(x[0]) - x[1])**4 + 100*((x[1] - x[2])**6) + (np.tan(x[2] - x[3]))**4 + x[0]**8
+        return f
+    
+    n = 4
+
+    x0 = starting_point(4)
+    # bounds = [(-10, 10), (-10, 10), (-10, 10), (-10, 10)]
+    bounds = [(-1, 1)  for i in range(n)]
+    print(bounds)
+
+    # ===========  LOCAL MINIMIZER  =============
+    # result = minimize(functionProblemScipy, x0)
+
+    # ===========  GLOBAL MINIMIZER  =============
+
+    #COME IL SIMULATED ANNEALING
+    # result = dual_annealing(functionProblemScipy, bounds)
+
+
+
+    # BASINSHOPPING
+    # Definisci il minimizzatore locale
+    # minimizer_kwargs = {"method": "BFGS"}
+    # result = basinhopping(functionProblemScipy, x0, minimizer_kwargs=minimizer_kwargs)
+
+
+
+    # DIFFERENTIAL_EVOLUTION(sembra essere il migliore)
+    result = differential_evolution(functionProblemScipy, bounds)
+
+    print("Optimal value:", result.fun)
+    print("Optimal point:", result.x)

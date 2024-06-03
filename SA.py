@@ -26,7 +26,7 @@ print("Valore di funzione ottimo iniziale: ", f_Star, x_Star)
 k = 1
 
 # inizializzo T
-T = 1 / (k)
+T = 1 / (1+k)
 
 
 # max_iter = 10**6 * 4
@@ -78,10 +78,10 @@ while k < max_iter:
     
     if (y_k > 10).any() :
         print(f"Out of range, y_k: {y_k}")
-        break
+        continue
     if (y_k < -10).any() :
         print(f"Out of range, y_k: {y_k}")
-        break
+        continue
     
 # PASSO 4 #
     #print("XK", x_k)
@@ -91,6 +91,7 @@ while k < max_iter:
     print("Valore funzione obiettivo dopo minimizzazione locale: ", fObj)
     file_stampe.write(f"Valore funzione obiettivo dopo la minimizzazione locale all'iterazione {k}: {fObj} \n")
 
+    file_stampe.write(f"f* all'iterazione {k}: {f_Star}\n\n")
 
     n_func_eval += 1
     if fObj < f_Star :
@@ -105,7 +106,7 @@ while k < max_iter:
     # else :
         # xs = x_k
         # fs = function(x_k, n, eps)
-    file_stampe.write(f"f* all'iterazione {k}: {f_Star}\n\n")
+    
     
     
     
@@ -156,5 +157,5 @@ file.close()
 
 print("Il valore ottimo è ", f_Star, " !")
 file_stampe.write(f"Il valore della funzione obiettivo in x*: {f_Star} \n")
-
+file_stampe.close()
 #print(dic_minimi)
