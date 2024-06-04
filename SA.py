@@ -81,14 +81,16 @@ while k < max_iter:
     y_k = troncatoMAIN(eps, delta, x_k)
 
     fObj = function(y_k, n, eps)
+
     print("Valore funzione obiettivo dopo minimizzazione locale: ", fObj)
     file_stampe.write(f"Valore funzione obiettivo dopo la minimizzazione locale all'iterazione {k}: {fObj} \n")
-    if (y_k > 26).any() :
+
+    if (y_k > 500).any() :
         file_stampe.write(f"Punto scartato perche' andato out of box: {y_k}\n\n")
         print(f"Out of range, y_k: {y_k}")
         k += 1
         continue
-    if (y_k < 2).any() :
+    if (y_k < -500).any() :
         file_stampe.write(f"Punto scartato perche' andato out of box: {y_k}\n\n")
         print(f"Out of range, y_k: {y_k}")
         k += 1

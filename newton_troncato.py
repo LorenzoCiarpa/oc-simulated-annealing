@@ -101,10 +101,10 @@ def troncatoMAIN(eps, delta, x0) :
         #     break
         
 
-        if (x > 26).any() :
+        if (x > 500).any() :
             print("troncato out of range")
             break
-        if (x < 2).any() :
+        if (x < -500).any() :
             print("troncato out of range")
             break
 

@@ -410,23 +410,40 @@ from constants import *
 
 #Only if you start near the optimal point
 ### 15 cauchy likelihood###
-def dim() :
-    return 1
+# def dim() :
+#     return 1
     
-def starting_point(n) :
-    # return np.array([0.9, 0.9])
-    pto_init = np.zeros(n)
-    for i in range(0, n) :
-        pto_init[i] = float(np.random.uniform(2., 26.))
-    return pto_init
+# def starting_point(n) :
+#     # return np.array([0.9, 0.9])
+#     pto_init = np.zeros(n)
+#     for i in range(0, n) :
+#         pto_init[i] = float(np.random.uniform(2., 26.))
+#     return pto_init
     
-def functionProblem(x, n) :
-    yi = np.array([2, 5, 7, 8, 11, 15, 17, 21, 23, 26])
-    return -np.sum(np.log(np.pi) + np.log(1 + (yi - x)**2))
+# def functionProblem(x, n) :
+#     yi = np.array([2, 5, 7, 8, 11, 15, 17, 21, 23, 26])
+#     return -np.sum(np.log(np.pi) + np.log(1 + (yi - x)**2))
 
 
-#PROBLEMA 2 ESAME VECCHIO
 
+# ================ PROBLEMI IMPLEMENTAZIONI ====================
+
+#PROBLEMA 1 
+
+# def dim() :
+#     return 2
+    
+# def starting_point(n) :
+#     pto_init = np.zeros(n)
+#     for i in range(0, n) :
+#         pto_init[i] = float(np.random.uniform(-20, 20))
+#     return pto_init
+    
+# def functionProblem(x, n) :
+#     f = (10**5)*x[0]**2+x[1]**2-(x[0]**2+x[1]**2)**2 + 10**(-5)*(x[0]**2+x[1]**2)**4
+#     return f
+
+#PROBLEMA 2
 # def dim() :
 #     return 2
     
@@ -437,8 +454,61 @@ def functionProblem(x, n) :
 #     return pto_init
     
 # def functionProblem(x, n) :
-#     f=(x[0]-13 + ((5-x[1])*x[1]-2)*x[1])**2 + (x[0]-29 + ((x[1]+1)*x[1]-14)-x[1])**2
+#     f=(x[0]-13 + ((5-x[1])*x[1]-2)*x[1])**2 + (x[0]-29 + ((x[1]+1)*x[1]-14)*x[1])**2
 #     return f
+
+
+# #PROBLEMA 3 
+# def dim() :
+#     return 2
+    
+# def starting_point(n) :
+#     pto_init = np.zeros(n)
+#     for i in range(0, n) :
+#         pto_init[i] = float(np.random.uniform(-500, 500))
+#     return pto_init
+    
+# def functionProblem(x, n) :
+#     f=100*(x[1]-x[0]**2)**2 + 6*(float(6.4)*(x[1]-float(0.5))**2-x[0]-float(0.6))**2
+#     return f
+
+
+# #PROBLEMA 4 
+
+# def dim() :
+#     return 2
+    
+# def starting_point(n) :
+#     pto_init = np.zeros(n)
+#     for i in range(0, n) :
+#         pto_init[i] = float(np.random.uniform(0, 500))
+#     return pto_init
+    
+# def functionProblem(x, n) :
+#     f = -x[0]*x[1]*(72-2*x[0]-2*x[1])
+#     return f
+
+#PROBLEMA 1 ESAME 
+
+def dim() :
+    return 2
+    
+def starting_point(n) :
+    pto_init = np.zeros(n)
+    for i in range(0, n) :
+        pto_init[i] = float(np.random.uniform(0, 500))
+    return pto_init
+    
+def functionProblem(x, n) :
+    f = -x[0]*x[1]*(72-2*x[0]-2*x[1])
+    return f
+
+
+
+
+
+
+# ================ MAIN SCIPY ====================
 
 
 if __name__ == "__main__":
@@ -450,7 +520,7 @@ if __name__ == "__main__":
     
     n = 4
 
-    x0 = starting_point(4)
+    x0 = starting_point(n)
     # bounds = [(-10, 10), (-10, 10), (-10, 10), (-10, 10)]
     bounds = [(-1, 1)  for i in range(n)]
     print(bounds)
