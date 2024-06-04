@@ -26,14 +26,16 @@ print("Valore di funzione ottimo iniziale: ", f_Star, x_Star)
 k = 1
 
 # inizializzo T
-T = 1 / (1+k)
+# T = 1 / (1+k)
+T = 10**2
 
 
 # max_iter = 10**6 * 4
-max_iter = 10**4 * 2
+max_iter = 10**3 * 2
 dic = {}
 file = open("Funzione Test PROB 4", "w")
 
+counter_accepted = 1
                     
 while k < max_iter:
     
@@ -60,7 +62,8 @@ while k < max_iter:
     numeratore_exp = function(x_k, n, eps) - f_Star
     d = np.exp((-(np.maximum(0.0, numeratore_exp)) / T))
     
-    if (alpha > d) :
+    if (alpha > d) : # test Von Neumann
+        counter_accepted += 1
         # xs = x_k
         # fs = function(xs, n, eps)
         k += 1
@@ -73,23 +76,32 @@ while k < max_iter:
     print("Valore funzione obiettivo prima di minimizzazione locale: ", fObj)
 
     file_stampe.write(f"Valore funzione obiettivo prima della minimizzazione locale all'iterazione {k}: {fObj} \n")
+    file_stampe.write(f"Punti generati prima che il test fosse accettato: {counter_accepted}\n")
 
     y_k = troncatoMAIN(eps, delta, x_k)
-    
-    if (y_k > 10).any() :
-        print(f"Out of range, y_k: {y_k}")
-        continue
-    if (y_k < -10).any() :
-        print(f"Out of range, y_k: {y_k}")
-        continue
-    
-# PASSO 4 #
-    #print("XK", x_k)
-    #print("XK-1", x_k_1)
 
     fObj = function(y_k, n, eps)
     print("Valore funzione obiettivo dopo minimizzazione locale: ", fObj)
     file_stampe.write(f"Valore funzione obiettivo dopo la minimizzazione locale all'iterazione {k}: {fObj} \n")
+    if (y_k > 26).any() :
+        file_stampe.write(f"Punto scartato perche' andato out of box: {y_k}\n\n")
+        print(f"Out of range, y_k: {y_k}")
+        k += 1
+        continue
+    if (y_k < 2).any() :
+        file_stampe.write(f"Punto scartato perche' andato out of box: {y_k}\n\n")
+        print(f"Out of range, y_k: {y_k}")
+        k += 1
+        continue
+    
+    counter_accepted = 1
+# PASSO 4 #
+    #print("XK", x_k)
+    #print("XK-1", x_k_1)
+
+    # fObj = function(y_k, n, eps)
+    # print("Valore funzione obiettivo dopo minimizzazione locale: ", fObj)
+    # file_stampe.write(f"Valore funzione obiettivo dopo la minimizzazione locale all'iterazione {k}: {fObj} \n")
 
     file_stampe.write(f"f* all'iterazione {k}: {f_Star}\n\n")
 

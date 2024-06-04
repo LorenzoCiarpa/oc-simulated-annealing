@@ -15,7 +15,7 @@ max_iter_penalita = 10**2
 m = 9
 p = 1
 
-DIM = 4
+DIM = 1
 
 FILENAME_PROBLEM = "Funzione Test Prob1"
 FILENAME_STAMPE = "results_simulated_annealing.txt"

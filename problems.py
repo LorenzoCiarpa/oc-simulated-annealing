@@ -80,7 +80,7 @@ from constants import *
 
 
 #prob5
-## dim = 2
+# dim = 2
 # def starting_point(n) :
 #     pto_init = np.zeros(n)
 #     for i in range(0, n, 2) :
@@ -168,18 +168,18 @@ from constants import *
 #   4 OK
 ### Miele and Cantrell ###
 
-def dim() :
-    return 4
+# def dim() :
+#     return 4
     
-def starting_point(n) :
-    pto_init = np.zeros(n)
-    for i in range(0, n) :
-        pto_init[i] = float(np.random.uniform(-10, 10))
-    return pto_init
+# def starting_point(n) :
+#     pto_init = np.zeros(n)
+#     for i in range(0, n) :
+#         pto_init[i] = float(np.random.uniform(-10, 10))
+#     return pto_init
     
-def functionProblem(x, n) :
-    f = (np.exp(x[0]) - x[1])**4 + 100*((x[1] - x[2])**6) + (np.tan(x[2] - x[3]))**4 + x[0]**8
-    return f
+# def functionProblem(x, n) :
+#     f = (np.exp(x[0]) - x[1])**4 + 100*((x[1] - x[2])**6) + (np.tan(x[2] - x[3]))**4 + x[0]**8
+#     return f
 
 #   5 OK
 ### WOOD FUNCTION ###
@@ -404,6 +404,42 @@ def functionProblem(x, n) :
 #         somma_2 += x[i]**2
 #     f = 0.1*somma_1 - somma_2
 #     return f
+
+
+
+
+#Only if you start near the optimal point
+### 15 cauchy likelihood###
+def dim() :
+    return 1
+    
+def starting_point(n) :
+    # return np.array([0.9, 0.9])
+    pto_init = np.zeros(n)
+    for i in range(0, n) :
+        pto_init[i] = float(np.random.uniform(2., 26.))
+    return pto_init
+    
+def functionProblem(x, n) :
+    yi = np.array([2, 5, 7, 8, 11, 15, 17, 21, 23, 26])
+    return -np.sum(np.log(np.pi) + np.log(1 + (yi - x)**2))
+
+
+#PROBLEMA 2 ESAME VECCHIO
+
+# def dim() :
+#     return 2
+    
+# def starting_point(n) :
+#     pto_init = np.zeros(n)
+#     for i in range(0, n) :
+#         pto_init[i] = float(np.random.uniform(-10, 10))
+#     return pto_init
+    
+# def functionProblem(x, n) :
+#     f=(x[0]-13 + ((5-x[1])*x[1]-2)*x[1])**2 + (x[0]-29 + ((x[1]+1)*x[1]-14)-x[1])**2
+#     return f
+
 
 if __name__ == "__main__":
     from scipy.optimize import minimize, dual_annealing, basinhopping, differential_evolution

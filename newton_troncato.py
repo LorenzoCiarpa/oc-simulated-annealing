@@ -101,10 +101,10 @@ def troncatoMAIN(eps, delta, x0) :
         #     break
         
 
-        if (x > 10).any() :
+        if (x > 26).any() :
             print("troncato out of range")
             break
-        if (x < -10).any() :
+        if (x < 2).any() :
             print("troncato out of range")
             break
 
@@ -120,5 +120,4 @@ def troncatoMAIN(eps, delta, x0) :
         #print("\n")
     
     print(f"Trocanto Iterazioni del Troncato: {n_iter} Norma del gradiente: {norm_gradient}")
-    file_stampe.write(f"Punti generati prima che il test fosse accettato: {n_iter}\n")
     return x

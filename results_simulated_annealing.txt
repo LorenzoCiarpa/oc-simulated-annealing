@@ -1,0 +1,121 @@
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 1: -49.3200030241112 
+Punti generati prima che il test fosse accettato: 1
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 1: -49.33850514126893 
+f* all'iterazione 1: -46.0202006948253
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 5: -51.7045473706054 
+Punti generati prima che il test fosse accettato: 4
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 5: -52.93580906373694 
+f* all'iterazione 5: -49.33850514126893
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 29: -55.53608655587284 
+Punti generati prima che il test fosse accettato: 24
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 29: -55.767371628993274 
+Punto scartato perche' andato out of box: [26.00182689]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 35: -53.04410803511399 
+Punti generati prima che il test fosse accettato: 29
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 35: -54.039432457138375 
+f* all'iterazione 35: -52.93580906373694
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 61: -54.52145548745403 
+Punti generati prima che il test fosse accettato: 26
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 61: -55.07362650948267 
+f* all'iterazione 61: -54.039432457138375
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 68: -55.59108985737116 
+Punti generati prima che il test fosse accettato: 7
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 68: -55.76538986237197 
+Punto scartato perche' andato out of box: [26.00079115]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 145: -55.242729502106286 
+Punti generati prima che il test fosse accettato: 83
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 145: -55.76598367783403 
+Punto scartato perche' andato out of box: [26.0011016]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 158: -55.32878352976285 
+Punti generati prima che il test fosse accettato: 95
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 158: -55.76453639535682 
+Punto scartato perche' andato out of box: [26.0003448]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 174: -55.356950549381764 
+Punti generati prima che il test fosse accettato: 110
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 174: -55.76503465352432 
+Punto scartato perche' andato out of box: [26.0006054]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 223: -55.35991439875897 
+Punti generati prima che il test fosse accettato: 158
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 223: -55.765963795803295 
+Punto scartato perche' andato out of box: [26.00109121]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 236: -55.24462452763859 
+Punti generati prima che il test fosse accettato: 170
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 236: -55.76567062984151 
+Punto scartato perche' andato out of box: [26.00093795]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 250: -55.221418580867066 
+Punti generati prima che il test fosse accettato: 183
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 250: -55.76446105832615 
+Punto scartato perche' andato out of box: [26.00030539]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 449: -55.28354986130841 
+Punti generati prima che il test fosse accettato: 381
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 449: -55.76697498238567 
+Punto scartato perche' andato out of box: [26.00161967]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 453: -55.13089167654313 
+Punti generati prima che il test fosse accettato: 384
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 453: -55.76439255901763 
+Punto scartato perche' andato out of box: [26.00026956]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 517: -55.577163492529664 
+Punti generati prima che il test fosse accettato: 447
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 517: -55.76696163381514 
+Punto scartato perche' andato out of box: [26.00161269]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 552: -55.269991748532604 
+Punti generati prima che il test fosse accettato: 481
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 552: -55.765869337481966 
+Punto scartato perche' andato out of box: [26.00104183]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 685: -55.07251295556865 
+Punti generati prima che il test fosse accettato: 613
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 685: -55.67792908015158 
+f* all'iterazione 685: -55.07362650948267
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 855: -55.73383550866426 
+Punti generati prima che il test fosse accettato: 170
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 855: -55.766254716334224 
+Punto scartato perche' andato out of box: [26.00124327]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 999: -55.75330306271644 
+Punti generati prima che il test fosse accettato: 313
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 999: -55.76419890880799 
+Punto scartato perche' andato out of box: [26.00016826]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 1763: -55.69710211781439 
+Punti generati prima che il test fosse accettato: 1076
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 1763: -55.76427779600513 
+Punto scartato perche' andato out of box: [26.00020953]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 1895: -55.703875084463576 
+Punti generati prima che il test fosse accettato: 1207
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 1895: -55.76417574234103 
+Punto scartato perche' andato out of box: [26.00015614]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 1953: -55.74765511808863 
+Punti generati prima che il test fosse accettato: 1264
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 1953: -55.7657800469913 
+Punto scartato perche' andato out of box: [26.00099515]
+
+Valore funzione obiettivo prima della minimizzazione locale all'iterazione 1954: -55.69640805211147 
+Punti generati prima che il test fosse accettato: 1264
+Valore funzione obiettivo dopo la minimizzazione locale all'iterazione 1954: -55.76719201593303 
+Punto scartato perche' andato out of box: [26.00173306]
+
+
+
+Algoritmo terminato in 2000 iterazioni 
+Il valore di x*: 
+x(1) = 25.954092384118663 
+Il valore della funzione obiettivo in x*: -55.67792908015158 
