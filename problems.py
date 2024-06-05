@@ -488,6 +488,9 @@ from constants import *
 #     f = -x[0]*x[1]*(72-2*x[0]-2*x[1])
 #     return f
 
+
+# =============== ESAME ===============
+
 #PROBLEMA 1 ESAME 
 
 def dim() :
@@ -496,14 +499,63 @@ def dim() :
 def starting_point(n) :
     pto_init = np.zeros(n)
     for i in range(0, n) :
-        pto_init[i] = float(np.random.uniform(0, 500))
+        pto_init[i] = float(np.random.uniform(-1, 1))
     return pto_init
     
 def functionProblem(x, n) :
-    f = -x[0]*x[1]*(72-2*x[0]-2*x[1])
+    f = 0
+    for i in range(10):
+        f += (2 + 2*i - (np.exp(i*x[0]) + np.exp(i*x[1])))**2
     return f
 
 
+#PROBLEMA 2 ESAME 
+
+def dim() :
+    return 2
+    
+def starting_point(n) :
+    pto_init = np.zeros(n)
+    for i in range(0, n, 2) :
+        pto_init[i] = float(np.random.uniform(-1, 2))
+        pto_init[i] = float(np.random.uniform(-1, 1))
+    return pto_init
+    
+def functionProblem(x, n) :
+    f = np.cos(x[0])*np.sin(x[1]) - (x[0]/(x[1]**2 + 1))
+    return f
+
+
+#PROBLEMA 3 ESAME 
+
+# def dim() :
+#     return 2
+    
+# def starting_point(n) :
+#     pto_init = np.zeros(n)
+#     for i in range(0, n, 2) :
+#         pto_init[i] = float(np.random.uniform(-1.5, 4))
+#         pto_init[i] = float(np.random.uniform(-3, 3))
+#     return pto_init
+    
+# def functionProblem(x, n) :
+#     f = np.sin(x[0] + x[1]) + (x[0] - x[1])**2 - (3/2)*x[0] + (5/2)*x[1] + 1
+#     return f
+
+#PROBLEMA 4 ESAME 
+
+# def dim() :
+#     return 2
+    
+# def starting_point(n) :
+#     pto_init = np.zeros(n)
+#     for i in range(0, n) :
+#         pto_init[i] = float(np.random.uniform(-10, 10))
+#     return pto_init
+    
+# def functionProblem(x, n) :
+#     f = 1 + np.sin(x[0])**2 + np.sin(x[1])**2 - 0.1*np.exp(-x[0]**2 - x[1]**2)
+#     return f
 
 
 
@@ -518,7 +570,14 @@ if __name__ == "__main__":
         f = (np.exp(x[0]) - x[1])**4 + 100*((x[1] - x[2])**6) + (np.tan(x[2] - x[3]))**4 + x[0]**8
         return f
     
-    n = 4
+    def functionProblemScipy(x) :
+        f = 0
+        for i in range(10):
+            f += (2 + 2*i - (np.exp(i*x[0]) + np.exp(i*x[1])))**2
+        return f
+    
+    
+    n = 2
 
     x0 = starting_point(n)
     # bounds = [(-10, 10), (-10, 10), (-10, 10), (-10, 10)]
